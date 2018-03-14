@@ -10,7 +10,7 @@ var app = express();
 
 // Database configuration
 var databaseUrl = "scraper";
-var collections = ["scrapedData"];
+var collections = ["scrapedNews"];
 
 // Hook mongojs configuration to the db variable
 var db = mongojs(databaseUrl, collections);
@@ -26,7 +26,7 @@ app.get("/", function(req, res) {
 // Retrieve data from the db
 app.get("/all", function(req, res) {
   // Find all results from the scrapedData collection in the db
-  db.scrapedData.find({}, function(error, found) {
+  db.scrapedNews.find({}, function(error, found) {
     // Throw any errors to the console
     if (error) {
       console.log(error);
@@ -49,15 +49,15 @@ app.get("/scrape", function(req, res) {
       // Save the text and href of each link enclosed in the current element
       var title = $(element).children("a").text();
       var link = $(element).children("a").attr("href");
-      var summary = $(element).children(".search-result__teaser__text").text()
+      //var summary = $(element).children(".search-result__teaser__text").text()
 
       // If this found element had both a title and a link
-      if (title && link && summary) {
+      if (title && link ) {
         // Insert the data in the scrapedData db
-        db.scrapedData.insert({
+        db.scrapedNews.insert({
           title: title,
           link: link,
-          summary:summary
+          //summary:summary
         },
         function(err, inserted) {
           if (err) {
