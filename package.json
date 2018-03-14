@@ -1,0 +1,35 @@
+{
+  "name": "mynews",
+  "version": "1.0.0",
+  "description": "Web application that allows users to view and leave comments on the latest news",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nedyk/myNews.git"
+  },
+  "keywords": [
+    "mangoose",
+    "express-handlebars",
+    "bodyparser",
+    "cheerios",
+    "request",
+    "express"
+  ],
+  "author": "Neddy Nyatome",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nedyk/myNews/issues"
+  },
+  "homepage": "https://github.com/Nedyk/myNews#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cheerio": "^1.0.0-rc.2",
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0",
+    "mongojs": "^2.5.0",
+    "request": "^2.85.0"
+  }
+}
